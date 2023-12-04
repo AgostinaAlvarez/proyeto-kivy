@@ -1,7 +1,7 @@
 
 
 <MainWindow>:
-    spacing: dp(8)
+    spacing: dp(5)
     canvas.before:
         Color:
             rgba: 1, 1, 1, 1
@@ -44,7 +44,7 @@
         size_hint_x: .8
         spacing: dp(8)
         orientation: 'vertical'
-        padding: [dp(0), dp(8), dp(12), dp(8)]
+        #padding: [dp(0), dp(8), dp(12), dp(8)]
 
         canvas.before:
 
@@ -56,27 +56,32 @@
             id: scr_mngr
             Screen:
                 name: 'scr_overview'
-                AnchorLayout:
-                    id: dynamic_content
-
-
-                #GridLayout:
-                    #id: dynamic_content
-                    #cols: 2
-                    #row_default_height: 40
-                    #Label:
-                        #text: 'Nombre'
-                        #size_hint_x: None
-                        #width: dp(100)  # Ancho de la columna
-                        #color: 1, 0, 0, 1  # Color rojo para el texto
-
-                    #Label:
-                        #text: 'Edad'
-                        #size_hint_x: None
-                        #width: dp(100)  # Ancho de la columna
-                        #color: 1, 0, 0, 1  # Color rojo para el texto
-
-
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text:'pantalla 1'
+                        color: 0, 0, 0, 1 #color negro para la letra
+                        size_hint: 1,None
+                        height: "60dp"
+                        canvas.before:
+                            Color:
+                                rgba: 1, 0, 0, 1 #color rojo para el fondo
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    AnchorLayout:
+                        id: dynamic_content
+                    Label:
+                        text:'pantalla 1'
+                        color: 0, 0, 0, 1 #color negro para la letra
+                        size_hint: 1,None
+                        height: "80dp"
+                        canvas.before:
+                            Color:
+                                rgba: 1, 0, 0, 1 #color rojo para el fondo
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
 
             Screen:
                 name: 'scr_analytics'
