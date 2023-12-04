@@ -1,0 +1,111 @@
+
+
+<MainWindow>:
+    spacing: dp(8)
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: 'vertical'
+        id: nav_menu
+        size_hint_x: .2
+        canvas.before:
+            Color:
+                rgba: 1, 0, 1, .1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Button:
+            text: 'boton 1'
+            on_release: root.switch_screen('scr_overview')
+
+        Button:
+            text: 'boton 2'
+            on_release: root.switch_screen('scr_analytics')
+
+        Button:
+            text: 'boton 3'
+            on_release: root.switch_screen('scr_sales')
+
+        Button:
+            text: 'boton 4'
+            on_release: root.switch_screen('scr_customers')
+
+        Button:
+            text: 'boton 5'
+            on_release: root.switch_screen('scr_finance')
+
+    BoxLayout:
+        size_hint_x: .8
+        spacing: dp(8)
+        orientation: 'vertical'
+        padding: [dp(0), dp(8), dp(12), dp(8)]
+
+        canvas.before:
+
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        ScreenManager:
+            id: scr_mngr
+            Screen:
+                name: 'scr_overview'
+                AnchorLayout:
+                    id: dynamic_content
+
+
+                #GridLayout:
+                    #id: dynamic_content
+                    #cols: 2
+                    #row_default_height: 40
+                    #Label:
+                        #text: 'Nombre'
+                        #size_hint_x: None
+                        #width: dp(100)  # Ancho de la columna
+                        #color: 1, 0, 0, 1  # Color rojo para el texto
+
+                    #Label:
+                        #text: 'Edad'
+                        #size_hint_x: None
+                        #width: dp(100)  # Ancho de la columna
+                        #color: 1, 0, 0, 1  # Color rojo para el texto
+
+
+
+            Screen:
+                name: 'scr_analytics'
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: 'Este es un ejemplo de Label pantalla 2'
+                        color: 1, 0, 0, 1  # Color rojo para el texto
+
+            Screen:
+                name: 'scr_sales'
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: 'Este es un ejemplo de Label pantall 3'
+                        color: 1, 0, 0, 1  # Color rojo para el texto
+
+            Screen:
+                name: 'scr_customers'
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: 'Este es un ejemplo de Label panntalla 4'
+                        color: 1, 0, 0, 1  # Color rojo para el texto
+
+            Screen:
+                name: 'scr_finance'
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: 'Este es un ejemplo de Label patalla 5'
+                        color: 1, 0, 0, 1  # Color rojo para el texto
